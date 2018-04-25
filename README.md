@@ -70,6 +70,10 @@ You will need to import the `Link` from your server file created above.
 const { Link } = require('../server').routes
 ```
 
+##### Configuration
+
+While not required, it is recommended that you [disable file-system routing](https://github.com/zeit/next.js#disabling-file-system-routing) for added security and intentionality of how your routes are accessed.
+
 For a full list of the api, feel free to checkout [next-routes](https://github.com/fridays/next-routes#on-the-client) documentation (we piggy-back of what they have already done).
 
 ### License
