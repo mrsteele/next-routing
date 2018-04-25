@@ -1,6 +1,6 @@
 {
   "name": "next-routing",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A nuxt inspired routing plugin for nextjs",
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "start": "NODE_ENV=production node server.js"
   },
   "files": [
-    "src"
+    "src",
+    "README.md"
   ],
   "repository": {
     "type": "git",
