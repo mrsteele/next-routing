@@ -15,7 +15,7 @@ npm i next-routing --save
 
 ##### Page
 
-If a file or folder begins with an underscore (`_`), it will define that route part as a query parameter.
+If a file or folder begins with an underscore (`_`), it will define that route part as a path parameter.
 
 For example, if you had a file `/pages/users/_id/comments.js`, it would convert that route to `/users/:id/comments`.
 
