@@ -3,16 +3,32 @@ const path = require('path')
 const Routes = require('next-routes')
 const appRoot = require('app-root-path')
 
+const convertToPattern = (str) => str
+  .split('/index').join('')
+  .split('_').map(section => {
+    if (section[0] === '_') {
+      return section.substr(1)
+    }
+    return section
+  })
+  .join(':')
+
+const convertToName = (str) => convertToPattern(str)
+  .substr(1)
+  .split(':').join('')
+  .split('/').join('-')
+
 const addRoutesFromPath = (routes, rel = '') => {
   fs.readdirSync(path.resolve(`${appRoot}/pages${rel}`)).forEach(file => {
     if (file.indexOf('.js') === -1) {
       addRoutesFromPath(routes, `${rel}/${file}`)
     } else {
       file = file.replace('.js', '')
+      const page = `${rel}/${file}`
       routes.add({
-        name: `${rel.substr(1)}/${file}`.split('/').join('-'),
-        page: `${rel}/${file}`.split(':').join('_'),
-        pattern: `${rel}/${file}`.split('_').join(':')
+        page,
+        name: convertToName(page),
+        pattern: convertToPattern(page)
       })
     }
   })

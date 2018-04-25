@@ -3,7 +3,7 @@ A nuxt inspired routing plugin for nextjs
 
 ### About
 
-This plugin is inspired by [nuxt routing](https://nuxtjs.org/guide/routing/). The idea is that your routing becomes a lot simpler by prepending underscores (`_`) on your routes to simplify your routes.
+This is a routing plugin for [next](https://github.com/zeit/next.js/) inspired by [nuxt routing](https://nuxtjs.org/guide/routing/). The idea is that your routing becomes a lot simpler by prepending underscores (`_`) on your routes to create path parameters automatically.
 
 ### Installation
 
