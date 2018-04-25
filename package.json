@@ -1,0 +1,43 @@
+{
+  "name": "next-routing",
+  "version": "0.0.1",
+  "description": "A nuxt inspired routing plugin for nextjs",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js"
+  },
+  "files": [
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrsteele/next-routing.git"
+  },
+  "author": "Matt Steele <matt@omnionline.us> (http://omnionline.us/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrsteele/next-routing/issues"
+  },
+  "homepage": "https://github.com/mrsteele/next-routing#readme",
+  "dependencies": {
+    "app-root-path": "^2.0.1",
+    "next-routes": "^1.4.1"
+  },
+  "devDependencies": {
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "express": "^4.16.3",
+    "next": "^5.1.0",
+    "standard": "^11.0.1"
+  },
+  "keywords": [
+    "next",
+    "nextjs",
+    "routes",
+    "routing",
+    "nuxt",
+    "underscore"
+  ]
+}
