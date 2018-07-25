@@ -1,6 +1,6 @@
 {
   "name": "next-routing",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A nuxt inspired routing plugin for nextjs",
   "main": "src/index.js",
   "scripts": {

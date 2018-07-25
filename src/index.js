@@ -32,7 +32,7 @@ const addRoutesFromPath = (routes, rel = '') => {
       routes.add({
         page,
         name: convertToName(page) || 'index',
-        pattern: convertToPattern(page)
+        pattern: convertToPattern(page) || '/'
       })
     }
   })
