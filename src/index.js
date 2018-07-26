@@ -18,12 +18,12 @@ const convertToName = (str) => convertToPattern(str)
   .split(':').join('')
   .split('/').join('-')
 
-const ignoredFiles = ['_error.js', '_document.js']
+const ignoredFiles = ['_error.js', '_document.js', '_app.js']
 const addRoutesFromPath = (routes, rel = '') => {
   fs.readdirSync(path.resolve(`${appRoot}/pages${rel}`)).forEach(file => {
     if (file.indexOf('.js') === -1) {
       addRoutesFromPath(routes, `${rel}/${file}`)
-    } else if (ignoredFiles.indexOf(file) !== -1) {
+    } else if (ignoredFiles.indexOf(file) !== -1 && rel === '') {
       // ignore these
     } else {
       // its a valid file
