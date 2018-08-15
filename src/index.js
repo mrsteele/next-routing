@@ -3,8 +3,6 @@ const path = require('path')
 const Routes = require('next-routes')
 const appRoot = require('app-root-path')
 
-let appPath = appRoot
-
 const convertToPattern = (str) => str
   .split('/index').join('')
   .split('_').map(section => {
@@ -21,10 +19,10 @@ const convertToName = (str) => convertToPattern(str)
   .split('/').join('-')
 
 const ignoredFiles = ['_error.js', '_document.js', '_app.js']
-const addRoutesFromPath = (routes, rel = '') => {
-  fs.readdirSync(path.resolve(`${appPath}/pages${rel}`)).forEach(file => {
+const addRoutesFromPath = (routes, {root, rel = ''}) => {
+  fs.readdirSync(path.resolve(`${root}/pages${rel}`)).forEach(file => {
     if (file.indexOf('.js') === -1) {
-      addRoutesFromPath(routes, `${rel}/${file}`)
+      addRoutesFromPath(routes, {root, rel: `${rel}/${file}`})
     } else if (ignoredFiles.indexOf(file) !== -1 && rel === '') {
       // ignore these
     } else {
@@ -41,10 +39,7 @@ const addRoutesFromPath = (routes, rel = '') => {
 }
 
 module.exports = (opts = {}) => {
-  if (opts.appPath) {
-    appPath = opts.appPath
-  }
   const routes = Routes()
-  addRoutesFromPath(routes)
+  addRoutesFromPath(routes, Object.assign({ root: appRoot }, opts))
   return routes
 }
