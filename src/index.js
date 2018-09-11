@@ -21,9 +21,9 @@ const convertToName = (str) => convertToPattern(str)
 const ignoredFiles = ['_error.js', '_document.js', '_app.js']
 const addRoutesFromPath = (routes, opts, rel = '') => {
   fs.readdirSync(path.resolve(`${opts.root}/pages${rel}`)).forEach(file => {
-    if (file.indexOf('.js') === -1) {
+    if (file.indexOf('.') === -1) {
       addRoutesFromPath(routes, opts, `${rel}/${file}`)
-    } else if (ignoredFiles.indexOf(file) !== -1 && rel === '') {
+    } else if (file.indexOf('.js') === -1 || (ignoredFiles.indexOf(file) !== -1 && rel === '')) {
       // ignore these
     } else {
       // its a valid file
