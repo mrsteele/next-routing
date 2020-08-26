@@ -3,6 +3,8 @@ A nuxt inspired routing plugin for nextjs
 
 ### About
 
+DEPRECATED: This is now a deprecated package since nextjs now supports this functionality natively.
+
 This is a routing plugin for [next](https://github.com/zeit/next.js/) inspired by [nuxt routing](https://nuxtjs.org/guide/routing/). The idea is that your routing becomes a lot simpler by prepending underscores (`_`) on your routes to create path parameters automatically.
 
 ### Installation
